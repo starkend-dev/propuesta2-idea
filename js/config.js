@@ -23,7 +23,9 @@ var config_videoType = 'video/mp4';
 var config_videoOpacity = 1;
 
 /* Google map parameters */
-var config_mapLat = 51.509036; // latitude
-var config_mapLng = -0.123280; // longitude
+// var config_mapLat = 51.509036; // latitude
+// var config_mapLng = -0.123280; // longitude
+var config_mapLat = 19.5219202; // latitude
+var config_mapLng = -99.21574049999998; // longitude
 var config_mapZoom = 16; // map zoom
 var config_mapTitle = 'My company' // marker title
