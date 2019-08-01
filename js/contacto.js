@@ -2,7 +2,7 @@
 /** ENVIO DE CORREO                                                                                              */
 /******************************************************************************************************************/
 
-function validateContact() {
+function envioCorreo() {
     var errors = "";
 
     var contact_name = document.getElementById("contact_name");
@@ -15,46 +15,6 @@ function validateContact() {
         '<p>Teléfono: ' + contact_phone.value + '</p>' +
         '<p>Mensaje: ' + contact_mensaje.value + '</p>';
 
-    if (contact_name.value == "") {
-        errors += 'El campo nombre es necesario.';
-    } else if (contact_email_address.value == "") {
-        errors += 'El campo email es necesario.';
-    } else if (checkcontact(contact_email_address.value) == false) {
-        errors += 'El correo electrónico no es valido.';
-    } else if (contact_phone.value == "") {
-        errors += 'El campo teléfono es necesario.';
-    }
-
-
-    if (errors) {
-        document.getElementById("error").style.display = "block";
-        document.getElementById("error").innerHTML = errors;
-        return false;
-    } else {
-
-        $.ajax({
-            type: "POST",
-            url: 'process.php',
-            data: $("#contact_form").serialize(),
-            success: function(msg) {
-                if (msg == 'success') {
-                    document.getElementById("error").style.display = "none";
-                    document.getElementById("contact_name").value = "";
-                    document.getElementById("contact_email").value = "";
-                    document.getElementById("contact_phone").value = "";
-                    document.getElementById("message").value = "";
-                    $("#contact_form").hide();
-                    document.getElementById("success").style.display = "block";
-                    document.getElementById("success").innerHTML = "Thank You! We'll contact you shortly.";
-                } else {
-                    document.getElementById("error").style.display = "block";
-                    document.getElementById("error").innerHTML = "Oops! Something went wrong while proceeding.";
-                }
-            }
-
-        });
-
-    }
 
     Email.send({
 
@@ -66,13 +26,13 @@ function validateContact() {
         // Body: contact_phone.value.concat(' ,', contact_name.value, ' ,', contact_mensaje.value),
 
     }).then(
-        // message => alert(message)
+        message => alert(message)
     );
 
-    contact_name.value = "";
-    contact_email_address.value = "";
-    contact_phone.value = "";
-    contact_mensaje.value = "";
+    // contact_name.value = "";
+    // contact_email_address.value = "";
+    // contact_phone.value = "";
+    // contact_mensaje.value = "";
     document.getElementById("error").style.display = "none";
     alert("Lo contactaremos en breve.");
 
