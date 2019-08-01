@@ -35,12 +35,7 @@
 
     <!-- Google Fonts -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700|Roboto+Condensed:200,300,300i,400,700|Roboto+Mono" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Barriecito&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fira+Code&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet"> -->
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -549,12 +544,13 @@
             <div class="container">
                 <div id="form-messages"></div>
                 <div class="form-wrap">
-                    <form id="contact-form" action="api/contact.php" method="post" autocomplete="off">
+                    <form id="contact-form" name="contact-form" action="api/contact.php" method="post" autocomplete="off">
                         <div class="row">
                             <div class="col-12 col-sm-6">
-                                <input class="form-control" type="text" placeholder="Nombre" name="name" id="name" required/>
-                                <input class="form-control" type="text" placeholder="Email" name="email" id="email" required/>
-                                <input class="form-control" type="text" placeholder="Asunto" name="subject" id="subject" required/>
+                                <input class="form-control" type="text" placeholder="Nombre" name="contact_name" id="contact_name" required/>
+                                <input class="form-control" type="text" placeholder="Email" name="contact_email" id="contact_email" required/>
+                                <input class="form-control" type="text" placeholder="Teléfono" name="contact_phone" id="contact_phone" required>
+                                <!-- <input class="form-control" type="text" placeholder="Asunto" name="subject" id="subject" required/> -->
                             </div>
                             <div class="col-12 col-sm-6">
                                 <textarea class="form-control" placeholder="Mensaje" rows="7" name="message" id="message" required></textarea>
@@ -562,7 +558,8 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Enviar</button>
+                                <!-- <button class="btn btn-primary" type="submit">Enviar</button> -->
+                                <button class="btn btn-primary" type="submit" onClick="envioCorreo();">Enviar</button>
                             </div>
                         </div>
                     </form>
@@ -589,13 +586,13 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <div>
-                            <i class="fa fa-map-marker"> </i>223 John Adam Street, London, UK.
+                            <i class="fa fa-map-marker"> </i>Viveros de Coyoacán 64, Viv. de la Loma.
                         </div>
                         <div>
-                            <i class="fa fa-phone"> </i>800 123-456-789
+                            <i class="fa fa-phone"> </i>Tel:.(55)5206 2240
                         </div>
                         <div>
-                            <i class="fa fa-envelope"> </i>your@email.com
+                            <i class="fa fa-envelope"> </i>info@ideasg.com
                         </div>
                     </div>
                 </div>
@@ -627,6 +624,9 @@
 
     </div>
 
+    <!-- Envio de correo -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/jquery-migrate-3.0.0.min.js"></script>
@@ -644,6 +644,7 @@
     <script src="js/particles.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/contacto.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI4pu8_vaoGSCaiW_HQV06I639cIsbdWY&callback=myMap"></script>
 
 </body>
