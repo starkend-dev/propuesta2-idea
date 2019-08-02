@@ -818,6 +818,7 @@ nav ul li {
     border: 5px solid #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    height: 250px;
     margin-bottom: 30px;
     -o-transition: .5s;
     -ms-transition: .5s;
